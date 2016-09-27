@@ -44,7 +44,7 @@ RUN set -ex \
 		F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 		F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23 \
 	; do \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+		gpg --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
 	done
 
 ENV TOMCAT_MAJOR 8
