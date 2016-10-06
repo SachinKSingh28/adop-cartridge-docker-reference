@@ -8,7 +8,7 @@ WORKDIR /usr/local/tomcat
 # runtime dependencies for Tomcat Native Libraries
 # Tomcat Native 1.2+ requires a newer version of OpenSSL than debian:jessie has available (1.0.2g+)
 # see http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5046024.html (and following discussion)
-ENV OPENSSL_VERSION 1.0.2i-1
+ENV OPENSSL_VERSION 1.0.2j-1
 RUN { \
 		echo 'deb http://httpredir.debian.org/debian unstable main'; \
 	} > /etc/apt/sources.list.d/unstable.list \
@@ -44,7 +44,7 @@ RUN set -ex \
 		F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 		F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23 \
 	; do \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+		gpg --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
 	done
 
 ENV TOMCAT_MAJOR 8
