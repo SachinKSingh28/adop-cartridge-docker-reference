@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM java:8-jdk
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -50,7 +50,6 @@ RUN set -ex \
 ENV TOMCAT_MAJOR 8
 ENV TOMCAT_VERSION 8.0.35
 ENV TOMCAT_TGZ_URL https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
-ENV JAVA_DEBIAN_VERSION 8u111-b14-2~bpo8+1
 
 RUN set -x \
 	\
@@ -68,7 +67,6 @@ RUN set -x \
 		libapr1-dev \
 		libssl-dev \
 		make \
-		openjdk-${JAVA_VERSION%%u*}-jdk=$JAVA_DEBIAN_VERSION \
 	" \
 	&& apt-get update && apt-get install -y --no-install-recommends $nativeBuildDeps && rm -rf /var/lib/apt/lists/* \
 	&& ( \
