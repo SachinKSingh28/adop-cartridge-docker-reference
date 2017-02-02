@@ -81,7 +81,7 @@ RUN set -x \
 		&& make -j$(nproc) \
 		&& make install \
 	) \
-	&& apt-get purge -y --auto-remove $nativeBuildDeps \
+	&& apt-get purge -y --auto-remove $nativeBuildDeps git \
 	&& rm -rf "$nativeBuildDir" \
 	&& rm bin/tomcat-native.tar.gz
 
